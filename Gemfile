@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '3.2.16'
+gem 'rails', '4.0.2'
 
 gem 'jquery-rails'
 gem 'haml-rails'
@@ -12,11 +12,11 @@ gem 'omniauth'
 gem 'omniauth-github'
 
 # friendly urls
-gem 'friendly_id'
+gem "friendly_id", "~> 5.0.2"
 
 # searches
 gem 'ransack'
-gem 'kaminari'
+gem 'kaminari', "~> 0.15.0"
 
 # geolocation
 gem 'geocoder'
@@ -29,21 +29,17 @@ gem 'acts-as-taggable-on'
 
 gem 'thin'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'therubyracer', :platforms => :ruby
-  gem 'uglifier'
-end
+gem 'sass-rails',   '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'therubyracer', :platforms => :ruby
+gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'quiet_assets'
   gem 'sqlite3'
-  gem 'factory_girl_rails'
+  gem "factory_girl_rails", "~> 4.3.0"
   gem 'faker'
-  gem 'rspec-rails'
+  gem "rspec-rails", "~> 2.14.0"
 end
 
 
@@ -53,25 +49,11 @@ group :test do
   gem 'coveralls', require: false # https://coveralls.io
   gem 'database_cleaner', '1.0.1'
   gem 'capybara'
-  gem 'jasminerice'
+  gem "jasminerice", git: "https://github.com/bradphelan/jasminerice", branch: "master"
 end
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+gem 'protected_attributes'
